@@ -1,0 +1,33 @@
+package com.aug3;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+//Open notepad and write your name. Write a java program to read and print your name in the console
+
+public class ReadNameDemo {	
+	public static void main(String[] args) throws IOException {
+
+		// The name of the file to open.
+		String fileName = "C:\\Users\\ipsik\\eclipse-workspace\\JavaPractice\\src\\com\\aug3\\Name.txt";
+
+		// This will reference one line at a time
+		String line = null;
+
+		// FileReader reads text files in the default encoding.
+		FileReader fileReader = new FileReader(fileName);
+
+		// Always wrap FileReader in BufferedReader.
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+		while ((line = bufferedReader.readLine()) != null) {
+			System.out.println(line);
+		}
+
+		// Always close files.
+		bufferedReader.close();
+	}
+
+}
